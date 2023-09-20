@@ -3,19 +3,20 @@ import {
     Text, View, TextInput, ImageBackground,
     StyleSheet, Dimensions
 } from 'react-native';
+import { BgImgs } from './BgImages';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const BgImg = (props) => {
+const BgImg = ({children, img}) => {
     return (
         <View>
             <ImageBackground
-                source={require(`../assets/landingpage.png`)}
+                source={BgImgs[img].uri}
                 resizeMode="stretch"
                 style={styles.img}>
-                {props.children}
+                {children}
             </ImageBackground>
         </View>
     );
