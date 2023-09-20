@@ -15,22 +15,32 @@ export default function App() {
     const t = await AsyncStorage.getItem("token");
     setToken(t);
   };
-  
-  useEffect( () => {
+
+  useEffect(() => {
     setAsyncStorage();
   }, []);
 
   console.log(token);
-  return token? (
+  return token ? (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={"Home"}>
+      <Stack.Navigator
+        initialRouteName={"Home"}
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <Stack.Screen name="Home" component={LandingPage} />
         <Stack.Screen name="Pickup" component={PickupRequest} />
       </Stack.Navigator>
-    </NavigationContainer>)
-    :
-    (<NavigationContainer>
-      <Stack.Navigator initialRouteName={"Login"}>
+    </NavigationContainer>
+  ) : (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName={"Login"}
+        creenOptions={{
+          headerShown: false,
+        }}
+      >
         <Stack.Screen name="Login" component={LoginForm} token="lol" />
         <Stack.Screen name="Signup" component={SignupForm} />
       </Stack.Navigator>

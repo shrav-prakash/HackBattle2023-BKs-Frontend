@@ -1,11 +1,11 @@
-import { Button, Pressable, Text, View } from "react-native";
+import { Button, Dimensions, Pressable, Text, View } from "react-native";
 import BgImg from "./BgImg";
 
 export default function LandingPage({ navigation }) {
-  return (
-    <BgImg img="landing">
-      <Button onPress={() => navigation.navigate("Login")} style={{flex:1}} title=""></Button>
-      <Button onPress={() => console.log("hello")} style={{flex:1}} title=""></Button>
-    </BgImg>
-  );
+    return (
+        <BgImg img="landing">
+            <Pressable style={{ flex: 1 }} onPress={() => navigation.navigate('Pickup')}><View style={{ width: Dimensions.get('window').width }} /></Pressable>
+            <Pressable style={{ flex: 1 }} onPress={() => console.log('Button 2')}><View style={{ width: Dimensions.get('window').width }} /></Pressable>
+        </BgImg>
+    );
 }

@@ -11,4 +11,8 @@ export const BgImgs = {
     imgName: "signup",
     uri: require("../assets/signup-bg.png"),
   },
+  pickup: {
+    imgName: "pickup",
+    uri: require('../assets/pickup.png'),
+  },
 };
