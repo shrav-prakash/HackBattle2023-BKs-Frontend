@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { StyleSheet, Button, Text, TextInput, View, Pressable } from "react-native";
+import BgImg from './BgImg'
+import InputWrapper from "./InputWrapper";
 
-export default function LoginForm() {
+export default function SignupForm() {
     const [name, setName] = useState('')
     const [regno, setRegno] = useState('')
     const [email, setEmail] = useState('');
@@ -9,42 +11,26 @@ export default function LoginForm() {
     const [rpw, setRpw] = useState('')
 
     const loginHandler = () => {
-
     }
 
     return (
-        <View style={styles.bg}>
+        <BgImg style={styles.bg} img="../assets/signup-bg.png">
             <View style={styles.loginForm}>
                 <Text style={styles.heading}>SIGN-UP</Text>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>Full Name:</Text>
-                    <TextInput style={styles.ip} onChangeText={val => setName(val)} value={name} />
-                </View>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>Registration Number:</Text>
-                    <TextInput style={styles.ip} onChangeText={val => setRegno(val)} value={regno} />
-                </View>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>VIT E-Mail ID:</Text>
-                    <TextInput style={styles.ip} onChangeText={val => setEmail(val)} value={email} />
-                </View>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>Password:</Text>
-                    <TextInput style={styles.ip} onChangeText={val => setPw(val)} value={pw} />
-                </View>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>Retype Password:</Text>
-                    <TextInput style={styles.ip} secureTextEntry={true} onChangeText={val => setRpw(val)} value={rpw} />
-                </View>
+                <InputWrapper label="Full Name:" val={name} setVal={txt => setName(txt)} />
+                <InputWrapper label="Registration Number:" val={regno} setVal={txt => setRegno(txt)} />
+                <InputWrapper label="VIT Email-ID:" val={email} setVal={txt => setEmail(txt)} />
+                <InputWrapper label="Password:" val={pw} setVal={txt => setPw(txt)} />
+                <InputWrapper label="Retype Password:" val={rpw} setVal={txt => setRpw(txt)} />
                 <Pressable style={styles.submitBtn}>
-                    <Text style={{ color: "white", textAlign: "center", fontWeight: "bold" }}>SIGN IN</Text>
+                    <Text style={{ color: "white", textAlign: "center", fontWeight: "bold" }}>SIGN UP</Text>
                 </Pressable>
                 <Text style={{ textAlign: "center" }}>Already have an account?</Text>
                 <Pressable>
                     <Text style={{ textDecorationLine: 'underline', textAlign: "center" }}>Sign-In</Text>
                 </Pressable>
             </View>
-        </View >
+        </BgImg >
 
     )
 }
@@ -52,7 +38,6 @@ export default function LoginForm() {
 const styles = StyleSheet.create({
     bg: {
         flex: 1,
-        backgroundColor: '#FF7900',
         alignItems: 'center',
         justifyContent: 'center',
     },

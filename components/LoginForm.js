@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, Button, Text, TextInput, View, Pressable } from "react-native";
+import BgImg from "./BgImg";
+import InputWrapper from "./InputWrapper";
 
 export default function LoginForm() {
     const [email, setEmail] = useState('');
@@ -10,17 +12,11 @@ export default function LoginForm() {
     }
 
     return (
-        <View style={styles.bg}>
+        <BgImg style={styles.bg} img="../assets/signin-bg.png">
             <View style={styles.loginForm}>
                 <Text style={styles.heading}>SIGN-IN</Text>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>VIT E-Mail ID:</Text>
-                    <TextInput style={styles.ip} onChangeText={val => setEmail(val)} value={email} />
-                </View>
-                <View style={styles.ipWrapper}>
-                    <Text style={styles.label}>Password:</Text>
-                    <TextInput style={styles.ip} secureTextEntry={true} onChangeText={val => setPw(val)} value={pw} />
-                </View>
+                <InputWrapper label="VIT Email-ID:" val={email} setVal={txt => setEmail(txt)} />
+                <InputWrapper label="Password:" val={pw} setVal={txt => setPw(txt)} />
                 <Pressable style={styles.submitBtn}>
                     <Text style={{ color: "white", textAlign: "center", fontWeight: "bold" }}>SIGN IN</Text>
                 </Pressable>
@@ -29,7 +25,7 @@ export default function LoginForm() {
                     <Text style={{ textDecorationLine: 'underline', textAlign: "center" }}>Sign-Up</Text>
                 </Pressable>
             </View>
-        </View >
+        </BgImg >
 
     )
 }
@@ -54,20 +50,6 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     submitBtn: {
-        color: 'white'
-    },
-    ip: {
-        backgroundColor: "white",
-        borderColor: "white",
-        borderRadius: 8,
-        padding: 4,
-        marginTop: 3,
-        width: 180
-    },
-    ipWrapper: {
-        paddingBottom: 10
-    },
-    submitBtn: {
         backgroundColor: "#62516D",
         color: "white",
         width: 90,
@@ -77,8 +59,5 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10
     },
-    label: {
-        fontWeight: "bold",
-        paddingBottom: 2
-    }
+
 })
