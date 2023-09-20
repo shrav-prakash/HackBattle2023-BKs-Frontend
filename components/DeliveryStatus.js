@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { Pressable, Text, TextField } from "react-native";
+import { Pressable, Text, TextField, View } from "react-native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import BgImg from "./BgImg";
+import Info from "./Info";
 
 export default function DeliveryStatus() {
   const [deliverer, setDeliverer] = useState("");
@@ -25,7 +27,7 @@ export default function DeliveryStatus() {
     checkPickupStatus();
   }, []);
   return (
-    <BgImg>
+    <BgImg img="pickup">
       <Text>PARTNER DETAILS</Text>
       {isLoading && <Text>Loading...</Text>}
       {!isLoading && (
