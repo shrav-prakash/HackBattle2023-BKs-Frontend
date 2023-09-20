@@ -1,3 +1,5 @@
+import { Text, View } from 'react-native'
+
 export default function Delivery({ id, from, to }) {
     return (
         <View style={styles.listItem}>

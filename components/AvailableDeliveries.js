@@ -11,7 +11,7 @@ export default function AvailableDeliveries() {
         setIsLoading(true);
         const response = await axios.get('https://localhost:3001/availablePickups')
         const res = await response.json()
-        setDeliveries(res)
+        setDeliveries(res.pickups)
         setIsLoading(false);
     }, [])
     return (
