@@ -2,6 +2,7 @@ import { Text, TextInput, Pressable, View, StyleSheet } from "react-native"
 import SelectDropdown from "react-native-select-dropdown"
 import { useState } from "react"
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import BgImg from "./BgImg";
 
 export default function PickupRequest() {
     const [merchant, setMerchant] = useState('')
@@ -18,7 +19,7 @@ export default function PickupRequest() {
     )
 
     return (
-        <View style={styles.bg}>
+        <BgImg style={styles.bg} img="pickup">
             <Text style={styles.heading}>PACKAGE DETAILS</Text>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>DELIVERY MERCHANT</Text>
@@ -43,7 +44,7 @@ export default function PickupRequest() {
             <Pressable style={styles.postBtn}>
                 <Text style={{ textAlign: "center", color: "white", fontWeight: "bold" }}>POST REQUEST</Text>
             </Pressable>
-        </View>
+        </BgImg>
     )
 }
 
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 4,
         marginTop: 3,
-        width: "100%"
+        width: 325
     },
     ipWrapper: {
         paddingBottom: 10

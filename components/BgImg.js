@@ -9,7 +9,7 @@ const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const BgImg = ({children, img}) => {
+const BgImg = ({ children, img }) => {
     return (
         <View>
             <ImageBackground
@@ -30,11 +30,5 @@ const styles = StyleSheet.create({
         width: screenWidth,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    input: {
-        height: 40,
-        margin: 12,
-        borderWidth: 2,
-        padding: 10,
-    },
+    }
 });

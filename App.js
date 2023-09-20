@@ -17,7 +17,9 @@ export default function App() {
   console.log(token)
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={token ? "Home" : "Login"}>
+      <Stack.Navigator initialRouteName={token ? "Home" : "Login"} screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen name="Login" component={LoginForm} />
         <Stack.Screen name="Home" component={LandingPage} />
         <Stack.Screen name="Signup" component={SignupForm} />
