@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 4,
         marginTop: 3,
-        width: 180
+        width: 120
     },
     ipWrapper: {
         paddingBottom: 10
