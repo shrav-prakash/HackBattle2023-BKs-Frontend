@@ -9,13 +9,13 @@ const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const BgImg = ({ children, img }) => {
+const BgImg = ({ children, img, style }) => {
     return (
         <View>
             <ImageBackground
                 source={BgImgs[img].uri}
                 resizeMode="stretch"
-                style={styles.img}>
+                style={[styles.img, style]}>
                 {children}
             </ImageBackground>
         </View>

@@ -5,7 +5,7 @@ export default function LandingPage({ navigation }) {
     return (
         <BgImg img="landing">
             <Pressable style={{ flex: 1 }} onPress={() => navigation.navigate('Pickup')}><View style={{ width: Dimensions.get('window').width }} /></Pressable>
-            <Pressable style={{ flex: 1 }} onPress={() => console.log('Button 2')}><View style={{ width: Dimensions.get('window').width }} /></Pressable>
+            <Pressable style={{ flex: 1 }} onPress={() => navigation.navigate('AvlDeliveries')}><View style={{ width: Dimensions.get('window').width }} /></Pressable>
         </BgImg>
     );
 }

@@ -19,7 +19,7 @@ export default function PickupRequest() {
     )
 
     return (
-        <BgImg style={styles.bg} img="pickup">
+        <BgImg img="pickup">
             <Text style={styles.heading}>PACKAGE DETAILS</Text>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>DELIVERY MERCHANT</Text>
@@ -27,7 +27,7 @@ export default function PickupRequest() {
             </View>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>PACKAGE PICKUP LOCATION</Text>
-                <SelectDropdown data={pickupAreas} buttonStyle={styles.ip} buttonTextStyle={{ color: "white" }} defaultButtonText onChangeSearchInputText={txt => setPickup(txt)} value={pickup} renderDropdownIcon={dropdownIcon} dropdownIconPosition="right" />
+                <SelectDropdown data={pickupAreas} buttonStyle={styles.ip} buttonTextStyle={{ color: "white" }} rowStyle={styles.rowStyle} rowTextStyle={{ color: "white" }} defaultButtonText onChangeSearchInputText={txt => setPickup(txt)} value={pickup} renderDropdownIcon={dropdownIcon} dropdownIconPosition="right" />
             </View>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>PACKAGE DROP LOCATION</Text>
@@ -35,7 +35,7 @@ export default function PickupRequest() {
             </View>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>ESTIMATED TIME OF DELIVERY</Text>
-                <SelectDropdown data={deliveryTimes} buttonStyle={styles.ip} buttonTextStyle={{ color: "white" }} defaultButtonText onChangeSearchInputText={txt => setTod(txt)} value={tod} defaultValue='' renderDropdownIcon={dropdownIcon} dropdownIconPosition="right" />
+                <SelectDropdown data={deliveryTimes} buttonStyle={styles.ip} buttonTextStyle={{ color: "white" }} rowStyle={styles.rowStyle} rowTextStyle={{ color: "white" }} defaultButtonText onChangeSearchInputText={txt => setTod(txt)} value={tod} renderDropdownIcon={dropdownIcon} dropdownIconPosition="right" />
             </View>
             <View style={styles.fare}>
                 <Text style={styles.fareLabel}>Fare: </Text>
@@ -49,14 +49,6 @@ export default function PickupRequest() {
 }
 
 const styles = StyleSheet.create({
-    bg: {
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 32,
-        paddingTop: 80,
-        backgroundColor: "black",
-        flex: 1
-    },
     textip: {
         width: 325,
         height: 50,

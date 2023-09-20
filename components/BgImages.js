@@ -15,4 +15,8 @@ export const BgImgs = {
     imgName: "pickup",
     uri: require('../assets/pickup.png'),
   },
+  delivery: {
+    imgName: "delivery",
+    uri: require('../assets/delivery.png')
+  }
 };

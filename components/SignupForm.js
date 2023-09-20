@@ -56,7 +56,7 @@ export default function SignupForm({ navigation }) {
     };
 
     return (
-        <BgImg style={styles.bg} img="signup">
+        <BgImg img="signup">
             <View style={styles.loginForm}>
                 <Text style={styles.heading}>SIGN-UP</Text>
                 <View style={styles.row}>
@@ -121,11 +121,6 @@ export default function SignupForm({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    bg: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
     loginForm: {
         padding: 36,
         borderColor: "rgba(255, 255, 255, 0.5)",

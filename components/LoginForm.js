@@ -8,15 +8,9 @@ import {
     Pressable,
 } from "react-native";
 import BgImg from "./BgImg";
-import InputWrapper from "./InputWrapper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function LoginForm({ navigation }) {
-    AsyncStorage.getItem("token")
-        .then((t) => {
-            navigation.navigate("Home");
-        })
-        .catch((err) => console.log(err));
+export default function LoginForm({ navigation, setToken }) {
     const [email, setEmail] = useState("");
     const [pw, setPw] = useState("");
 
@@ -39,14 +33,14 @@ export default function LoginForm({ navigation }) {
                     AsyncStorage.setItem("token", data.token).catch((err) =>
                         console.log(err)
                     );
-                    navigation.navigate("Home");
+                    setToken(data.token)
                 })
                 .catch((err) => console.log(err))
         );
     };
 
     return (
-        <BgImg style={styles.bg} img="login">
+        <BgImg img="login">
             <View style={styles.loginForm}>
                 <Text style={styles.heading}>SIGN-IN</Text>
                 <View style={styles.ipWrapper}>
@@ -78,12 +72,6 @@ export default function LoginForm({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    bg: {
-        flex: 1,
-        backgroundColor: "#FF7900",
-        alignItems: "center",
-        justifyContent: "center",
-    },
     loginForm: {
         padding: 36,
         borderColor: "rgba(255, 255, 255, 0.5)",
