@@ -6,7 +6,7 @@ import PickupRequest from './components/PickupRequest';
 
 export default function App() {
   return (
-    <SignupForm />
+    <PickupRequest />
   );
 }
 
