@@ -16,19 +16,19 @@ export default function PickupRequest() {
             <Text style={{ fontWeight: "bold", fontSize: 36 }}>PACKAGE DETAILS</Text>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>DELIVERY MERCHANT</Text>
-                <TextInput style={styles.ip} onChangeText={setVal} value={val} />
+                <TextInput style={styles.ip} onChangeText={txt => setMerchant(txt)} value={merchant} />
             </View>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>PACKAGE PICKUP LOCATION</Text>
-                <SelectDropdown data={pickupAreas} style={styles.ip} onChangeText={setVal} value={val} />
+                <SelectDropdown data={pickupAreas} style={styles.ip} onChangeSearchInputText={txt => setPickup(txt)} value={pickup} />
             </View>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>PACKAGE DROP LOCATION</Text>
-                <SelectDropdown data={dropAreas} style={styles.ip} onChangeText={setVal} value={val} />
+                <SelectDropdown data={dropAreas} style={styles.ip} onChangeSearchInputText={txt => setDrop(txt)} value={drop} />
             </View>
             <View style={styles.ipWrapper}>
                 <Text style={styles.label}>ESTIMATED TIME OF DELIVERY</Text>
-                <SelectDropdown data={deliveryTimes} style={styles.ip} onChangeText={setVal} value={val} />
+                <SelectDropdown data={deliveryTimes} style={styles.ip} onChangeSearchInputText={txt => setTod(txt)} value={tod} />
             </View>
             <View style={styles.fare}>
                 <Text>Fare: </Text>
