@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useEffect, useState } from "react";
 import AvailableDeliveries from "./components/AvailableDeliveries";
+import UserDeliveries from './components/UserDeliveries'
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Home" component={LandingPage} />
         <Stack.Screen name="AvlDeliveries" component={AvailableDeliveries} />
         <Stack.Screen name="Pickup" component={PickupRequest} />
+        <Stack.Screen name="UserDeliveries" component={UserDeliveries} />
       </Stack.Navigator>
     </NavigationContainer>
   ) : (

@@ -5,7 +5,7 @@ import { Text, FlatList, StyleSheet, View, Pressable } from "react-native";
 import Delivery from "./Delivery";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function AvailableDeliveries() {
+export default function AvailableDeliveries({ navigation }) {
     const [deliveries, setDeliveries] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -21,7 +21,6 @@ export default function AvailableDeliveries() {
                     },
                 }
             );
-            console.log(response.data);
             setDeliveries(response.data.pickups);
             setIsLoading(false);
         } catch (err) {
@@ -53,11 +52,10 @@ export default function AvailableDeliveries() {
                 {!isLoading && deliveries.length == 0 && <Text style={{ alignSelf: "center" }}>No Deliveries available at the moment!</Text>}
             </View>
             <View style={{ flex: 1, justifyContent: "center" }}>
-                <Pressable style={styles.viewDeliveries}>
+                <Pressable style={styles.viewDeliveries} onPress={() => { navigation.navigate('UserDeliveries') }}>
                     <Text style={{ color: "white", alignSelf: "center" }}>VIEW YOUR DELIVERIES</Text>
                 </Pressable>
             </View>
-
         </BgImg>
     );
 }
