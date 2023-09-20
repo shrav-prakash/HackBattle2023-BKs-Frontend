@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Pressable, Text, TextField } from 'react-native'
 import axios from 'axios'
 
-export default function DelivererInfo() {
+export default function DeliveryStatus() {
     const [deliverer, setDeliverer] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     useEffect(async () => {
