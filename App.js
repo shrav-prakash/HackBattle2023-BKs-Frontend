@@ -37,12 +37,16 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName={"Login"}
-        creenOptions={{
+        screenOptions={{
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Login" component={LoginForm} token="lol" />
-        <Stack.Screen name="Signup" component={SignupForm} />
+        <Stack.Screen name="Login">
+        {(props) => <LoginForm  {...props} setToken={setToken} />}
+        </Stack.Screen>
+        <Stack.Screen name="Signup">
+          {(props) => <SignupForm {...props} setToken={setToken} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -26,7 +26,7 @@ export default BgImg;
 
 const styles = StyleSheet.create({
     img: {
-        height: screenHeight,
+        height: screenHeight+50,
         width: screenWidth,
         justifyContent: 'center',
         alignItems: 'center',

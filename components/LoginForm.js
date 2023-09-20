@@ -10,12 +10,12 @@ import {
 import BgImg from "./BgImg";
 import InputWrapper from "./InputWrapper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import RNRestart from 'react-native-restart';
+import RNRestart from "react-native-restart";
 
-export default function LoginForm({ navigation, token }) {
+export default function LoginForm({ navigation, setToken }) {
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
-  console.log(token)
+  console.log(setToken);
 
   const loginHandler = async () => {
     console.log(JSON.stringify({ email, password: pw }));
@@ -33,10 +33,10 @@ export default function LoginForm({ navigation, token }) {
         .json()
         .then((data) => {
           // store token in local storage and navigate to landing page
-        //   AsyncStorage.setItem("token", data.token).catch((err) =>
-        //     console.log(err)
-        //   );
-          RNRestart.restart();
+          AsyncStorage.setItem("token", data.token).catch((err) =>
+            console.log(err)
+          );
+          setToken(data.token);
         })
         .catch((err) => console.log(err))
     );
