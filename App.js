@@ -7,6 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useEffect, useState } from "react";
+import AvailableDeliveries from "./components/AvailableDeliveries";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -24,12 +25,13 @@ export default function App() {
   return token ? (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={"Home"}
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}
       >
         <Stack.Screen name="Home" component={LandingPage} />
+        <Stack.Screen name="AvlDeliveries" component={AvailableDeliveries} />
         <Stack.Screen name="Pickup" component={PickupRequest} />
       </Stack.Navigator>
     </NavigationContainer>
